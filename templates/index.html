@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie_Recommender</title>
+</head>
+<body>
+    <div>
+        <header>
+        <h1><b>     Find Movies Here
+        </b></h1>
+        <br>
+        <br>
+        </header>
+    </div>
+    <div>
+    <form action="{{url_for('recommend')}}" method="post" enctype="multipart/form-data">
+        <input type="text" name="movies" placeholder="Enter Movie's name here"> <br> <br>
+
+        <button type="submit">Search</button>
+
+    </form>
+    </div>
+    <div>
+        {% for i,j in op %}
+        <h2>{{ i }}</h2>
+        <img src="{{ j }}" alt="{{ i }}" width="250px">
+        {% endfor %}
+
+    </div>
+    
+</body>
+</html>
